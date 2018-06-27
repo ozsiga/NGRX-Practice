@@ -1,9 +1,17 @@
 div(*ngIf='car')
-  h1 {{car.title}}
-  p {{car.description}}
-  p {{car.brand}}
-  p {{car.type}}
-  p {{car.year}}
-  p {{car.cylinderVolume}}
-  p {{car.phoneNumber}}
-  p {{car.emailAddress}}
+  mat-card.example-card
+    mat-card-header
+      .example-header-image(mat-card-avatar='')
+      mat-card-title {{car.title}}
+      mat-card-subtitle {{car.brand}}
+    img(mat-card-image='', src='http://theshutdown.org/wp-content/uploads/2018/06/delightful-bathroom-floor-tile-gallery-small-ideas-pictures-bamboo-flooring-in-amazing-antique-and-living.jpeg', alt='Photo of a Shiba Inu')
+    mat-card-content
+      p {{car.description}}
+      p {{car.type}}
+      p {{car.year}}
+      p {{car.cylinderVolume}}
+      p {{car.phoneNumber}}
+      p {{car.emailAddress}}
+    mat-card-actions
+      button(mat-button='') LIKE
+      button(mat-button='') SHARE
