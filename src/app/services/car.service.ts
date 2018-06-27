@@ -38,6 +38,10 @@ export class CarService {
     this.httpClient.delete(`https://car-crud.herokuapp.com/${id}`)
       .subscribe(data => { console.log(data); });
   }
+  public updateCar(id: number, car: any): void {
+    this.httpClient.put(`https://car-crud.herokuapp.com/${id}`, car)
+      .subscribe(data => { console.log(data); });
+  }
 
   public addMoreCars(): void {
     this.getCars();

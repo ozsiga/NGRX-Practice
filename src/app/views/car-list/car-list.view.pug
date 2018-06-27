@@ -4,3 +4,4 @@ mat-card(*ngFor='let car of cars')
   p {{car.description}}
   button(mat-raised-button='', color='primary', routerLink='/car-details/{{car.id}}') Details
   button(mat-raised-button='', color='warn', (click)='deleteCar(car.id, car.title)') Delete
+  button(mat-raised-button='', color='accent', routerLink='/car-update/{{car.id}}') Update

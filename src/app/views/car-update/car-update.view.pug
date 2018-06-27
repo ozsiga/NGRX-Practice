@@ -1,0 +1,18 @@
+div(*ngIf='car')
+  mat-card.example-card
+    mat-card-header
+      .example-header-image(mat-card-avatar='')
+      mat-card-title 
+        input(matInput='', name='type', value='{{car.title}}', [(ngModel)]='updatedCar.title')
+      mat-card-subtitle
+        input(matInput='', name='type', value='{{car.brand}}', [(ngModel)]='updatedCar.brand')
+    img(mat-card-image='', src='http://theshutdown.org/wp-content/uploads/2018/06/delightful-bathroom-floor-tile-gallery-small-ideas-pictures-bamboo-flooring-in-amazing-antique-and-living.jpeg', alt='Photo of a Shiba Inu')
+    mat-card-content
+      input(name='description', value='{{car.description}}', [(ngModel)]='updatedCar.description') 
+      input(name='type', value='{{car.type}}', [(ngModel)]='updatedCar.type') 
+      input(name='year', value='{{car.year}}', [(ngModel)]='updatedCar.year')
+      input(name='cylinderVolume', value='{{car.cylinderVolume}}', [(ngModel)]='updatedCar.cylindeVolume') 
+      input(name='phoneNumber', value='{{car.phoneNumber}}', [(ngModel)]='updatedCar.phoneNumber')
+      input(name='emailAddress', value='{{car.emailAddress}}', [(ngModel)]='updatedCar.emailAddress')
+    mat-card-actions
+      button(mat-button='', (click)= 'updateCar(car.id)')  UPDATE 
