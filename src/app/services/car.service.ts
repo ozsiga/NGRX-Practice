@@ -34,6 +34,11 @@ export class CarService {
       });
   }
 
+  public deleteCar(id: number): void {
+    this.httpClient.delete(`https://car-crud.herokuapp.com/${id}`)
+      .subscribe(data => { console.log(data); });
+  }
+
   public addMoreCars(): void {
     this.getCars();
   }

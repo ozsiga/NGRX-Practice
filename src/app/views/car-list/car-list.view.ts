@@ -34,6 +34,13 @@ export class CarListView implements OnInit {
     this.carService.addMoreCars();
   }
 
+  public deleteCar(id: number, title: string): void {
+    const conf = confirm(`Are ou sure, you want to delete: ${title}?`);
+    if (conf) {
+      this.carService.deleteCar(id);
+    }
+  }
+
   public ngOnInit(): void {
     this.getCars();
   }

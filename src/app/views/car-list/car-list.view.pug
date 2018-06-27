@@ -1,4 +1,6 @@
 button(mat-raised-button, color='primary', (click)='addMoreCar()') Show More Car
-mat-card(*ngFor='let car of cars', routerLink='/car-details/{{car.id}}')
+mat-card(*ngFor='let car of cars')
   h1 {{car.title}}
   p {{car.description}}
+  button(mat-raised-button='', color='primary', routerLink='/car-details/{{car.id}}') Details
+  button(mat-raised-button='', color='warn', (click)='deleteCar(car.id, car.title)') Delete
