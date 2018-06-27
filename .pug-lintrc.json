@@ -1,0 +1,19 @@
+{
+  "disallowClassAttributeWithStaticValue": true,
+  "disallowClassLiteralsBeforeIdLiterals": true,
+  "disallowIdAttributeWithStaticValue": true,
+  "disallowMultipleLineBreaks": true,
+  "requireClassLiteralsBeforeAttributes": true,
+  "requireIdLiteralsBeforeAttributes": true,
+  "requireLowerCaseTags": true,
+  "requireSpecificAttributes": [
+    { "img": []
+    }
+  ],
+  "validateAttributeSeparator": {
+    "separator": ", ",
+    "multiLineSeparator": ",\n  "
+  },
+  "validateDivTags": true,
+  "validateAttributeQuoteMarks": "'"
+}

@@ -1,0 +1,18 @@
+form.example-container
+  mat-form-field
+    input(matInput, name='title', placeholder='title', [(ngModel)]='car.title')
+  mat-form-field
+    textarea(matInput, name='description', placeholder='description', [(ngModel)]='car.description')
+  mat-form-field
+    input(matInput, name='brand', placeholder='brand', [(ngModel)]='car.brand')
+  mat-form-field
+    input(matInput, name='type', placeholder='type', [(ngModel)]='car.type')
+  mat-form-field
+    input(matInput, name='year', type='number', placeholder='year', [(ngModel)]='car.year')
+  mat-form-field
+    input(matInput, name='cylinder', type='number', placeholder='cylinder volume', [(ngModel)]='car.cylinderVolume')
+  mat-form-field
+    input(matInput, name='phone ', type='number', placeholder='phone number', [(ngModel)]='car.phoneNumber')
+  mat-form-field
+    input(matInput, name='email', type='email', placeholder='email address', [(ngModel)]='car.emailAddress')
+  button(mat-raised-button, color='primary', (click)='createCar()') Create

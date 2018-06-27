@@ -1,0 +1,4 @@
+button(mat-raised-button, color='primary', (click)='addMoreCar()') Show More Car
+mat-card(*ngFor='let car of cars', routerLink='/car-details/{{car.id}}')
+  h1 {{car.title}}
+  p {{car.description}}
