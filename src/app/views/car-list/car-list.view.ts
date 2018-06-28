@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CarService } from '../../services/car.service';
 import { Store } from '@ngrx/store';
 import { State as RootState } from '../../reducers/root.reducer';
 import * as carsReducer from '../../reducers/cars.reducer';
 import { Car } from '../../interfaces/car.interface';
 import { Subscription } from 'rxjs/Subscription';
-import { OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-car-list',
@@ -13,7 +12,7 @@ import { OnDestroy } from '@angular/core';
   styleUrls: ['./car-list.view.scss'],
 })
 
-export class CarListView implements OnInit {
+export class CarListView implements OnInit, OnDestroy {
   public cars: Car[] = [];
   public carsSubscription: Subscription;
   constructor(private store: Store<RootState>, private carService: CarService) {
@@ -21,7 +20,7 @@ export class CarListView implements OnInit {
   }
 
   public getCars(): void {
-    this.store.select(carsReducer.selectCars).subscribe((cars: Car[]) => {
+    this.carsSubscription = this.store.select(carsReducer.selectCars).subscribe((cars: Car[]) => {
       if (cars.length === 0) {
         this.carService.getCars();
       } else {
@@ -45,8 +44,10 @@ export class CarListView implements OnInit {
     this.getCars();
   }
 
-  /*   public ngOnDestroy(): void {
+  public ngOnDestroy(): void {
+    if (this.carsSubscription) {
       this.carsSubscription.unsubscribe();
-    } */
+    }
+  }
 
 }
